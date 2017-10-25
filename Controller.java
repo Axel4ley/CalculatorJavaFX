@@ -78,7 +78,11 @@ public class Controller {
 
             operator = value;
             number1 = Double.parseDouble(getDisplayNumber());
-            setDisplayNumber("");
+            if (value.equals("+")) {setDisplayNumber("+");}
+            else if (value.equals("-")) {setDisplayNumber("-");}
+            else if (value.equals("*")) {setDisplayNumber("*");}
+            else if (value.equals("/")) {setDisplayNumber("/");}
+            lastButtonWasDigit = false;
         } else {
             if(operator.isEmpty())
                 return;
